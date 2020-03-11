@@ -16,22 +16,22 @@
 export default {
   data() {
     return {
-      model: {},
-    }
+      model: {}
+    };
   },
   methods: {
     async save() {
-      console.log('save');
-      
-      const res = await this.$http.post('categories', this.model)
+      console.log("save");
+
+      const res = await this.$http.post("categories", this.model);
       console.log(res);
-      
-      this.$router.push('/categories/list')
+
+      this.$router.push("/categories/list");
       this.$message({
-        type: 'success',
-        message: '保存成功'
-      })
+        type: "success",
+        message: "保存成功"
+      });
     }
   }
-}
+};
 </script>
