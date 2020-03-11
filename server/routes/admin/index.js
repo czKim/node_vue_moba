@@ -18,5 +18,13 @@ module.exports = app => {
     const items = await Category.find().limit(10);
     res.send(items);
   });
+
+  /**
+   * 根据id获取分类详情
+   */
+  router.get("/categories/:id", async (req, res) => {
+    const item = await Category.findById(req.params.id);
+    res.send(item);
+  });
   app.use("/admin/api", router);
 };
